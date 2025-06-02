@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <!-- CDNからをbootstrap利用 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapのアイコン -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
     <!-- ローカルのBootstrap CSS -->
     <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+
+    <!-- ローカルのCSSファイルで上書き -->
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    
+
+    <!-- 横幅1000px 制限指定用 -->
     <style>
         .custom-container {
             max-width: 1000px;
@@ -18,31 +27,55 @@
 </head>
 <body>
     <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="#">SHIRO/KURO MONO家電紹介(仮)</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションメニューを切り替える">
-            <span class="navbar-toggler-icon"></span>
+    <div class="custom-container">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SHIRO/KURO MONO家電紹介(仮)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションメニューを切り替える">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">プロフィール</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">コンテンツ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">お問い合わせ</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- HERO部分の画像自動スクロールするカルーセル -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/air-conditioner-6605973_1920.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/vacuum-cleaner-268179_1920.jpg" class="d-block w-100" alt="...">
+            </div>
+                <div class="carousel-item">
+            <img src="images/andrea-donato-YpT236L491Q-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ホーム</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">プロフィール</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">コンテンツ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">お問い合わせ</a>
-            </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
-
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     インデックスページ(仮)
     <!-- ヘッダー開始 -->
     <header class="header">
@@ -61,8 +94,53 @@
                 <!-- メイン記事の仮テキスト -->
                 <div class="container">
                     <div class="row">
-                        <div class="column col-lg-8">
-                            <h2>Section1</h2>
+                        <div class="column col-sm-8">
+                            <h2 class="index-h2">新着記事</h2>
+                            <div class="new-article">
+                                <!-- 2つ目の記事 -->
+                                <a href="contents.html">
+                                    <div class="post-item">
+                                        <div class="eyecatch">
+                                            <img src="images/airconditioner_eyecatch.png" alt="エアコン">
+                                        </div>
+                                        <div class="post-text">
+                                            <time><i class="bi bi-calendar3"></i> 2025/06/02</time>
+                                            <h4 class="post-title">まだ間に合う！2025年夏直前 各社エアコン電気代比較</h3>
+                                            <p><span>記事を読む →</span></p>
+                                            <!-- <p>2025年の夏に向けて、各社のエアコンの電気代を比較しました。最新のモデルから旧モデルまで、どれが最もコストパフォーマンスが良いかを検証します。</p> -->
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- 3つ目の記事 -->
+                                <a href="contents.html">
+                                    <div class="post-item">
+                                        <div class="eyecatch">
+                                            <img src="images/vacuum_eyecatch.png" alt="掃除機">
+                                        </div>
+                                        <div class="post-text">
+                                            <time><i class="bi bi-calendar3"></i> 2025/05/26</time>
+                                            <h4 class="post-title">ワンルーム向け 軽量掃除機3種。取り回し向上！</h3>
+                                            <p><span>記事を読む →</span></p>
+                                            <!-- <p>2025年の夏に向けて、各社のエアコンの電気代を比較しました。最新のモデルから旧モデルまで、どれが最もコストパフォーマンスが良いかを検証します。</p> -->
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- 4つ目の記事 -->
+                                <a href="contents.html">
+                                    <div class="post-item">
+                                        <div class="eyecatch">
+                                            <img src="images/dryer_eyecatch.png" alt="ドライヤー">
+                                        </div>
+                                        <div class="post-text">
+                                            <time><i class="bi bi-calendar3"></i> 2025/05/19</time>
+                                            <h4 class="post-title">AAA社のBBBシリーズから3年ぶりのドライヤー 温度コントロールが大きく進化</h3>
+                                            <p><span>記事を読む →</span></p>
+                                            <!-- <p>2025年の夏に向けて、各社のエアコンの電気代を比較しました。最新のモデルから旧モデルまで、どれが最もコストパフォーマンスが良いかを検証します。</p> -->
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <h2>Section1(ダミーテキスト)</h2>
                                 <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                                 <blockquote>
@@ -71,24 +149,12 @@
                                     <cite>引用元：<a href="引用元URL" target="_blank">引用元のページタイトル</a></cite>
                                 </blockquote>
                                 </p>
-                            <h2>Section2</h2>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            <h2>Section3</h2>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            <h2>Section4</h2>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
                         </div>
-                        <div class="side col-lg-4">
+                        <div class="side col-sm-4">
                             <h3>プロフィール</h3>         
                             <p>こんにちは。koalaです。こんにちは。koalaです。こんにちは。koalaです。こんにちは。koalaです。こんにちは。koalaです。こんにちは。koalaです。</p>
                             <h3>新着記事</h3>         
-                            <ul>
+                            <ul class="list-styled">
                                 <li><a href="#">1つ目の記事</a></li>
                                 <li><a href="#">まだ間に合う！2025年夏直前 各社エアコン電気代比較</a></li>
                                 <li><a href="#">ワンルーム向け 軽量掃除機3種。取り回し向上！</a></li>
@@ -96,7 +162,7 @@
                             </ul>
                             <h3>カテゴリ</h3>
                             <!-- https://www.yodobashi.com/ から引用         -->
-                            <ul>
+                            <ul class="list-styled">
                                 <li><a href="#">新商品レビュー</a></li>
                                 <li><a href="#">既存商品紹介</a></li>
                                 <li><a href="#">他社製品比較</a></li>
