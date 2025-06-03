@@ -1,5 +1,15 @@
 ul {
-  line-height: 2;
+    line-height: 2;
+}
+
+/* ナビゲーション部分の調整 */
+.collapse.navbar-collapse{
+    font-size: 1.2rem;
+    padding: 0 15px;
+}
+.collapse.navbar-collapse a:hover{
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
 
 /* デモサイトから同様設定 */
@@ -22,6 +32,75 @@ ul {
     border-radius: 5px;
     box-shadow: 3px 3px 5px #eee;
 }
+
+a:link {
+    /* color: #007bff; */
+    color: #001F47;
+    text-decoration: none;
+}
+
+.new-article-white a:hover {
+    /* グレースケールになるテスト */
+    /* filter: grayscale(1);
+    transition: filter 0.3s ease; */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* .new-article-black a:link{ background:#111; } */
+.new-article-black a:hover {
+    filter: brightness(0.5);
+    transition: filter 0.3s ease;
+}
+
+/* SNSボタン装飾 開始 */
+a.social-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      margin: 5px;
+    }
+/* .social-btn.twitter { background-color: #1da1f2; }
+.social-btn.facebook { background-color: #3b5998; }
+.social-btn.instagram { background-color: #e1306c; } */
+/* SNSボタン装飾 終了 */
+
+/* プロフィール写真設定 */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* サンプル開始(タイトル部分) */
+.navbar-brand {
+    position: relative;
+    padding: 0.8rem;
+    margin-bottom: 0.2rem;
+    background-image: linear-gradient(0deg, white 0 50%, #3D1F15 30%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 26px;
+}
+.navbar-brand:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #3D1F15 0 50%, white 30%);
+    content: '';
+    z-index: -1;
+}
+/* サンプル終了 */
 
 @media (max-width: 768px) {
     .post-item {
