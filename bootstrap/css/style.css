@@ -2,6 +2,23 @@ ul {
     line-height: 2;
 }
 
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+}
+
+.logo {
+    /* background: #fff; */
+    /* padding: 15px 0; */
+    width:  24%;
+    /* text-align: center; */
+    /*color: #001F47;  ブランドカラー */
+}
+/* .logo img {
+    width:  24%;
+} */
+
 /* ナビゲーション部分の調整 */
 .collapse.navbar-collapse{
     font-size: 1.2rem;
