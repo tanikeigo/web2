@@ -2,22 +2,32 @@ ul {
     line-height: 2;
 }
 
-img {
+/* img {
     max-width: 100%;
     vertical-align: middle;
     height: auto;
-}
+} */
 
 .logo {
     /* background: #fff; */
     /* padding: 15px 0; */
-    width:  24%;
+    width:  40%;
     /* text-align: center; */
     /*color: #001F47;  ブランドカラー */
 }
-/* .logo img {
-    width:  24%;
-} */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* カルーセルのスライド画像調整 */
+.carousel-item img {
+    width: 80%;
+    height: 70vh;
+    object-fit: cover;
+    /* 画像をトリミングしてエリア全体にフィットさせる */
+    margin: 0 auto;
+}
 
 /* ナビゲーション部分の調整 */
 .collapse.navbar-collapse{
@@ -28,6 +38,13 @@ img {
     opacity: 0.5;
     transition: opacity 0.3s ease;
 }
+/* ダークモード対応検討(適用するとオフキャンバス時に黒地に紺で見えない) */
+ /* ブランドカラー */
+/* .nav-link {
+    color: #001F47;
+    font-weight: bold;
+    text-decoration: none;
+} */
 
 /* デモサイトから同様設定 */
 .eyecatch img {
@@ -96,6 +113,10 @@ a.social-btn {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
+}
+
+.article-text {
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
