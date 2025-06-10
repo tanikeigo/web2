@@ -119,6 +119,10 @@ a.social-btn {
     font-size: 1.2rem;
 }
 
+.table-active {
+    background-color: paleturquoise !important; /* 好きな色に変更 */
+}
+
 @media (max-width: 768px) {
     .post-item {
         /* display: flex; */
