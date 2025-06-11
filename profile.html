@@ -1,11 +1,330 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja"><!--   data-bs-theme="dark" -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFILE</title>
+    <title>プロフィール | HAKUROカデン</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- CDNからをbootstrap利用 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapのアイコン -->
+    <!-- X のアイコンを出すためバージョン1.11.0を指定(1.10.3から変更) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- font-awesomeのフォント -->
+     <!-- FBとIGのアイコンを使うため -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Lightbox2 のjQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <!-- Lightbox2 CSSファイル読み込み-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    <!-- Lightbox2 Jsファイル読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
+    type="text/javascript"></script>
+
+    <!-- パララックス適用 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script type="text/javascript" >
+    // Rellaxを".rellax"クラスを指定して初期化
+    var s = skrollr.init();
+    </script>
+
+    <!-- Import the component -->
+    <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script> -->
+
+    <!-- ローカルのBootstrap CSS -->
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+
+    <!-- ローカルのCSSファイルで上書き -->
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    
+
+    <!-- 横幅1000px 制限指定用 -->
+    <style>
+        .custom-container, .container-fluid {
+            max-width: 1000px;
+            margin: 0 auto; /* 中央寄せ */
+        }
+
+        /* パララックス適用テスト */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .parallax {
+            background-image: url('https://source.unsplash.com/1600x900/?nature');
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .content {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        .card {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    プロフィールページ(仮)
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <!-- 横幅1000px制限適用 -->
+        <div class="container-fluid">
+            <div class="logo">
+                <a class="navbar-brand" href="index.html">
+                <!-- ロゴ画像 -->
+                <img src="images/HAKURO-logo_1.svg" alt="HAKUROカデンのロゴ">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HAKUROカデン</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house"></i> ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#SHINTYAKU"><i class="bi bi-plugin"></i> コンテンツ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i> プロフィール</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html"><i class="bi bi-chat-left-dots-fill"></i> お問い合わせ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- インデックスページ(仮) ++ここのテキストは1000px制限外++ -->
+
+    <!-- ヘッダー開始 -->
+    <header class="header">
+        <div></div>
+    </header>
+    <!-- ヘッダー終了 -->
+    <!-- メインコンテンツ開始 -->
+    <main>
+        <!-- パララックスサンプルコード動作確認用 -->
+        <!-- <div class="content container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-3 shadow">
+                    <h5 class="card-title">カード1</h5>
+                    <p class="card-text">これはパララックスの後にふわっと表示されるカードです。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 shadow">
+                    <h5 class="card-title">カード2</h5>
+                    <p class="card-text">Intersection Observerを使っています。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 shadow">
+                    <h5 class="card-title">カード3</h5>
+                    <p class="card-text">スクロールすると表示されます。</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="custom-container">
+            <nav class="navbar navbar-default">
+            </nav>
+            <!-- <h1>メインコンテンツ</h1>
+            <p>ここにメインコンテンツが入ります。</p> -->
+            <div class="column">
+                <div class="container">
+                    <div class="row">
+                        <div class="column col-sm-8" id="SHINTYAKU">
+                            <h2 class="index-h2">プロフィール</h2>
+                            <!-- <div class="card" style="width: 18rem;">
+                                <img src="images/profile-kari.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">家電紹介・レビューサイトの「HAKURO カデン」です。新製品から他社製品との複数比較、使用レビューまで白物/黒物家電を紹介します。</p>
+                                </div>
+                            </div> -->
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                    <img src="images/profile-kari.png" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">管理人情報</h5>
+                                        <p class="card-text">家電紹介・レビューサイトの「HAKURO カデン」の管理人です。新製品から他社製品との複数比較、使用レビューまで白物/黒物家電を紹介します。</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="card">
+                                <div class="card-header">
+                                    HAKUROカデンについて
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">当サイトは、白物家電も黒物家電も、まとめてわかりやすく紹介する家電レビュー＆比較ブログです。<br>
+                                        公式スペックだけではわからない使い心地や実際の使用感、メーカーごとの特徴や製品の違いを、シンプルなレイアウトで丁寧に解説。迷いやすい家電選びを、スッと解消できるよう心がけています。<br>
+                                        「どのメーカーが自分に合ってる？」「実際に使ってみるとどうなの？」そんな疑問をもつあなたに、実用目線のヒントをお届けします。</p>
+                                </div>
+                            </div><br>
+                            <div class="card text-bg-info mb-3 rellax" style="max-width: 25rem;" data-rellax-speed="2">
+                                <div class="card-header"><i class="bi bi-info-square-fill"></i></div>
+                                <div class="card-body">
+                                    <p class="card-text">当ページの記事内容についてのご意見・ご質問や取り上げてほしい製品については「<a href="contact.html" style="color: aliceblue;">お問い合わせページ</a>」にて受け付けておりますので、そちらからご連絡ください。</p>
+                                </div>
+                            </div>
+                            <!-- <a href="images/profile-kari.png" data-lightbox="image-1" data-title="profile-image">
+                                <img src="images/profile-kari.png" alt="プロフィール画像" max-width="40%" class="img-fluid">
+                            </a> -->
+                        </div>
+
+                        <div class="side col-sm-4">                           
+                            <div class="col d-flex">
+                                <div class="card flex-fill">
+                                    <div class="card-body">
+                                        <h3 class="card-title">新着記事</h3>
+                                        <ul class="list-styled">
+                                            <li><a href="contents.html">ポケットサイズの巨大スクリーン！ XREAL Air使用レビュー</a></li>
+                                            <li><a href="#">まだ間に合う！2025年夏直前 各社エアコン電気代比較</a></li>
+                                            <li><a href="#">ワンルーム向け 軽量掃除機3種。取り回し向上！</a></li>
+                                            <li><a href="#">AAA社のBBBシリーズから3年ぶりのドライヤー 温度コントロールが大きく進化</a></li>
+                                            <li><a href="#">CCC社から連続再生時間12hの大容量バッテリーモデル登場！ スマートフォンへの充電にも対応</a></li>
+                                        </ul>
+                                    </div>  
+                                </div>
+                            </div><br>
+                            
+                            <div class="col d-flex">
+                                <div class="card flex-fill">
+                                    <div class="card-body">
+                                        <h3 class="card-title">カテゴリ</h3>
+                                        <!-- https://www.yodobashi.com/ から引用         -->
+                                        <ul class="list-styled">
+                                            <li><a href="#">新商品レビュー</a></li>
+                                            <li><a href="#">既存商品紹介</a></li>
+                                            <li><a href="#">他社製品比較</a></li>
+                                            <li><a href="#">リビング・衣類</a></li>
+                                            <li><a href="#">キッチン・調理</a></li>
+                                            <li><a href="#">理美容</a></li>
+                                            <li><a href="#">照明器具</a></li>
+                                            <li><a href="#">健康</a></li>
+                                            <li><a href="#">空調</a></li>
+                                            <li><a href="#">パソコン・タブレット</a></li>
+                                            <li><a href="#">スマートフォン</a></li>
+                                            <li><a href="#">パソコン周辺機器</a></li>
+                                            <li><a href="#">スマートフォン周辺機器(アクセサリ,モバイルバッテリー等)</a></li>
+                                            <li><a href="#">ゲーム機・周辺機器</a></li>
+                                            <li><a href="#">オーディオ・ビジュアル</a></li>
+                                            <li><a href="#">カメラ・写真</a></li>
+                                            <li><a href="#">スポーツ・アウトドア</a></li>
+                                            <li><a href="#">DIY・工具</a></li>
+                                            <li><a href="#">その他</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <!-- メインコンテンツ終了 -->
+
+    <!-- フッター開始 -->
+    <footer class="bg-light text-center ">
+        <a href="#" id="page-top"><i class="bi bi-arrow-bar-up"></i></a>
+
+    <!-- Grid container -->
+    <div class="container p-4">
+
+        <!-- Section: Social media -->
+        <section class="mb-4">
+        <!-- Facebook -->
+        <a class="social-btn facebook" style="background-color: #3b5998" href="https://www.facebook.com/" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="social-btn twitter" style="background-color: #55acee" href="https://x.com/" role="button"><i class="bi bi-twitter-x"></i></a>
+
+        <!-- Instagram -->
+        <a class="social-btn instagram" style="background-color: #ac2bac" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Section: Social media -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+        <p>
+            "HAKURO Kaden" is a home appliance introduction and review site. We introduce white/black home appliances from new products to multiple comparisons with other companies' products and reviews of their use.
+        </p>
+        </section>
+        <!-- Section: Text -->
+
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <p class="copyright">&copy; <a class="text-dark" href="index.html">HAKUROカデン</a></p>
+    </div>
+    <!-- Copyright -->
+
+    </footer>
+    <!-- フッター終了 -->
+
+  <!-- BootstrapのJavaScriptと依存関係 -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script>
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // 一度表示されたら監視をやめる
+            }
+        });
+        }, {
+        threshold: 0.2
+        });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+    <!-- スクリプト終了 -->
 </body>
 </html>
