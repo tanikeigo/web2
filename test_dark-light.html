@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="light"> <!-- 初期はライト -->
+<head>
+  <meta charset="UTF-8">
+  <title>ダークモード切替</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+
+  <div class="container text-center">
+    <h1>テーマ切り替えデモ</h1>
+    <button id="toggleThemeBtn" class="btn btn-primary mt-4">
+      ダークモードに切り替え
+    </button>
+
+    <div class="card mt-5">
+      <div class="card-body">
+        Bootstrapのダークモード切替サンプルです。
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("toggleThemeBtn");
+    const html = document.documentElement;
+
+    btn.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-bs-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      html.setAttribute("data-bs-theme", newTheme);
+      btn.textContent = newTheme === "dark" ? "ライトモードに切り替え" : "ダークモードに切り替え";
+    });
+  </script>
+</body>
+</html>

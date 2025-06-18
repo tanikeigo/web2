@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>過去記事一覧</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- CDNからをbootstrap利用 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapのアイコン -->
+    <!-- X のアイコンを出すためバージョン1.11.0を指定(1.10.3から変更) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- font-awesomeのフォント -->
+     <!-- FBとIGのアイコンを使うため -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- ローカルのCSSファイルで上書き -->
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .card {
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 横幅1000px 制限指定用 */
+    .custom-container, .container-fluid {
+            max-width: 1000px;
+            margin: 0 auto; /* 中央寄せ */
+    }
+  </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <!-- 横幅1000px制限適用 -->
+        <div class="container-fluid">
+            <div class="logo">
+                <a class="navbar-brand" href="index.html">
+                <!-- ロゴ画像 -->
+                <img src="images/HAKURO-logo_1.svg" alt="HAKUROカデンのロゴ">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HAKUROカデン</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house"></i> ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#SHINTYAKU"><i class="bi bi-plugin"></i> コンテンツ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i> プロフィール</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html"><i class="bi bi-chat-left-dots-fill"></i> お問い合わせ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+            </div>
+
+        </div>
+    </nav>
+
+<div class="container py-5">
+  <div class="row">
+    <!-- カード1 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像1">
+        <div class="card-body">
+          <h5 class="card-title">「冷蔵庫にもスマート革命」 最新モデル5選 比較レビュー！省エネ＆スマホ連携で夏を乗り切る</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード2 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像2">
+        <div class="card-body">
+          <h5 class="card-title">今こそ買い替え時！2025年夏モデル 洗濯機は“乾燥力”で選ぶべし</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード3 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像3">
+        <div class="card-body">
+          <h5 class="card-title">【徹底比較】55インチ4Kテレビ最前線：映像美＋音質＋UIの勝者は？</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード4 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像4">
+        <div class="card-body">
+          <h5 class="card-title">もうリモコンはいらない？音声操作対応の次世代エアコン3選</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード5 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像5">
+        <div class="card-body">
+          <h5 class="card-title">コーヒーメーカーもIoT時代へ！スマホで淹れる“おうちカフェ”体験</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード6 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像6">
+        <div class="card-body">
+          <h5 class="card-title">【ワンルーム家電特集】場所を取らないミニ冷蔵庫 ベスト3選</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード7 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像4">
+        <div class="card-body">
+          <h5 class="card-title">「ながら掃除」が変わる！静音＆自動モード搭載のスティック掃除機特集</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード8 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像5">
+        <div class="card-body">
+          <h5 class="card-title">スマートスピーカー付き照明？D社の新作LEDシーリングライトをチェック</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード9 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card">
+        <img src="images/kari-eyecatchimage.png" class="card-img-top" alt="画像6">
+        <div class="card-body">
+          <h5 class="card-title">夏の映画体験を格上げ！プロジェクター×サウンドバーの最強セット紹介</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
